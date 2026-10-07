@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>JEWELGLOW</title>
+
+
+    <style>
+
+
+        /* ==================================================
+           CONFIGURACIÓN GENERAL
+        ================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #D6D6D6;
+            color: #292522;
+        }
+
+
+        /* ==================================================
+           ENCABEZADO
+        ================================================== */
+
+        header {
+
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.58),
+                    rgba(0,0,0,0.58)
+                ),
+                url("fondo.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 110px 20px;
+
+        }
+
+
+        header h1 {
+
+            font-size: 52px;
+
+            margin: 0;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        header h1::after {
+
+            content: "";
+
+            display: block;
+
+            width: 70px;
+
+            height: 3px;
+
+            background-color: #EEBFF2;
+
+            margin: 20px auto;
+
+        }
+
+
+        header p {
+
+            font-size: 20px;
+
+            margin: 0;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* ==================================================
+           MENÚ
+        ================================================== */
+
+        nav {
+
+            background-color: #76587A;
+
+            text-align: center;
+
+            padding: 18px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+        }
+
+
+        nav a {
+
+            color: #f4eee8;
+
+            text-decoration: none;
+
+            margin: 0 18px;
+
+            font-size: 16px;
+
+            transition: color 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: #cdb8a5;
+
+        }
+
+
+        /* ==================================================
+           CONTENEDOR PRINCIPAL
+        ================================================== */
+
+        main {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 50px auto;
+
+        }
+
+
+        /* ==================================================
+           SECCIONES
+        ================================================== */
+
+        section {
+
+            background-color: white;
+
+            padding: 45px;
+
+            margin-bottom: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
+        }
+
+
+        h2 {
+
+            color: #292522;
+
+            font-size: 30px;
+
+            margin-top: 0;
+
+            border-left: 5px solid #b9a18e;
+
+            padding-left: 15px;
+
+        }
+
+
+        h3 {
+
+            color: #292522;
+
+        }
+
+
+        p {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ==================================================
+           SECCIÓN DESTACADA
+        ================================================== */
+
+        .destacada {
+
+            background-color: #292522;
+
+            color: white;
+
+            text-align: center;
+
+        }
+
+
+        .destacada h2 {
+
+            color: white;
+
+            border-left: none;
+
+            border-bottom: 2px solid #cdb8a5;
+
+            padding-left: 0;
+
+            padding-bottom: 12px;
+
+            display: inline-block;
+
+        }
+
+
+        /* ==================================================
+           BOTONES
+        ================================================== */
+
+        .boton {
+
+            display: inline-block;
+
+            background-color: #292522;
+
+            color: white;
+
+            padding: 13px 28px;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            margin-top: 15px;
+
+            transition:
+                background-color 0.3s,
+                transform 0.3s;
+
+        }
+
+
+        .boton:hover {
+
+            background-color: #8e7968;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .boton-claro {
+
+            display: inline-block;
+
+            background-color: #cdb8a5;
+
+            color: #292522;
+
+            padding: 13px 28px;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            margin-top: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .boton-claro:hover {
+
+            background-color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* ==================================================
+           IMAGEN PRINCIPAL
+        ================================================== */
+
+        .imagen-principal {
+
+            display: block;
+
+            width: 35%;
+
+            max-width: 300px;
+
+            height: auto;
+
+            margin: 30px auto;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.20);
+
+            transition:
+                transform 0.3s;
+
+        }
+
+
+        .imagen-principal:hover {
+
+            transform: scale(1.03);
+
+        }
+
+
+        /* ==================================================
+           TARJETAS DE PRODUCTOS
+        ================================================== */
+
+        .productos {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .producto {
+
+            width: 280px;
+
+            background-color: #f4eee8;
+
+            padding: 18px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.12);
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+        }
+
+
+        .producto:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 10px 20px rgba(0,0,0,0.18);
+
+        }
+
+
+        .producto img {
+
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+        }
+
+
+        .producto h3 {
+
+            margin-bottom: 5px;
+
+            font-size: 21px;
+
+        }
+
+
+        .producto p {
+
+            font-size: 15px;
+
+        }
+
+
+        /* ==================================================
+           LISTAS
+        ================================================== */
+
+        ul,
+        ol {
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* ==================================================
+           VIDEO
+        ================================================== */
+
+        .video-contenedor {
+
+            background-color: #f4eee8;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            margin-top: 25px;
+
+        }
+
+
+        .video-principal {
+
+            display: block;
+
+            width: 60%;
+
+            max-width: 500px;
+
+            height: auto;
+
+            margin: auto;
+
+            border-radius: 8px;
+
+        }
+
+
+        /* ==================================================
+           TABLA
+        ================================================== */
+
+        table {
+
+            width: 90%;
+
+            margin: 25px auto;
+
+            border-collapse: collapse;
+
+            overflow: hidden;
+
+            border-radius: 8px;
+
+        }
+
+
+        th {
+
+            background-color: #292522;
+
+            color: white;
+
+            padding: 14px;
+
+        }
+
+
+        td {
+
+            border: 1px solid #d5c8bd;
+
+            padding: 12px;
+
+            text-align: center;
+
+        }
+
+
+        tr:nth-child(even) {
+
+            background-color: #f4eee8;
+
+        }
+
+
+        tr:hover {
+
+            background-color: #e8ddd4;
+
+        }
+
+
+        /* ==================================================
+           FORMULARIO
+        ================================================== */
+
+        form {
+
+            max-width: 650px;
+
+            margin: auto;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 15px;
+
+            font-weight: bold;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin-top: 6px;
+
+            border: 1px solid #cdbfb3;
+
+            border-radius: 6px;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #faf8f6;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            outline: none;
+
+            border: 2px solid #8e7968;
+
+        }
+
+
+        textarea {
+
+            resize: vertical;
+
+        }
+
+
+        button {
+
+            background-color: #292522;
+
+            color: white;
+
+            border: none;
+
+            padding: 13px 28px;
+
+            margin-top: 15px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        button:hover {
+
+            background-color: #8e7968;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* ==================================================
+           PIE DE PÁGINA
+        ================================================== */
+
+        footer {
+
+            background-color: #171514;
+
+            color: #f4eee8;
+
+            text-align: center;
+
+            padding: 35px;
+
+            margin-top: 50px;
+
+        }
+
+
+        footer p {
+
+            margin: 5px;
+
+            font-size: 15px;
+
+        }
+
+
+        /* ==================================================
+           RESPONSIVO
+        ================================================== */
+
+        @media (max-width: 700px) {
+
+
+            header {
+
+                padding: 80px 20px;
+
+            }
+
+
+            header h1 {
+
+                font-size: 35px;
+
+            }
+
+
+            nav a {
+
+                display: block;
+
+                margin: 10px;
+
+            }
+
+
+            main {
+
+                width: 95%;
+
+            }
+
+
+            section {
+
+                padding: 25px;
+
+            }
+
+
+            .imagen-principal {
+
+                width: 70%;
+
+            }
+
+
+            .video-principal {
+
+                width: 100%;
+
+            }
+
+
+            table {
+
+                width: 100%;
+
+            }
+
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         ENCABEZADO
+    ================================================== -->
+
+    <header>
+
+        <h1>JEWELGLOW</h1>
+
+        <p>
+      DALE ESE GLOW A TU JOYAS
+       </p>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MENÚ
+    ================================================== -->
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#productos">Productos</a>
+
+        <a href="#proceso">Proceso</a>
+
+        <a href="#precios">Precios</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </nav>
+
+
+
+    <main>
+
+
+        <!-- ==================================================
+             INICIO
+        ================================================== -->
+
+        <section id="inicio">
+
+            <h2>Bienvenidos</h2>
+
+            <p>
+
+                Bienvenidos a
+                <strong>JEWELGLOW</strong>,
+                donde tus joyas siempre estaran increibles.
+
+            </p>
+
+
+            <img
+                src="Logo.png"
+                alt="JEWELGLOW"
+                class="imagen-principal"
+            >
+
+           <div style="text-align: center;">
+
+            <p>
+
+                Nos enfocamos en cuidar tus joyas aportandoles brillo y limpieza.
+
+            </p>
+
+
+            <a
+                href="#productos"
+                class="boton"
+            >
+
+                Ver productos
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PROPÓSITO
+        ================================================== -->
+
+        <section class="destacada">
+
+            <h2>Un brillo espectacular</h2>
+
+            <p>
+
+                En Jewelglow creemos que tus joyas siempre deben estar limpias y con un brillo que destaque.
+
+            </p>
+
+
+            <a
+                href="#contacto"
+                class="boton-claro"
+            >
+
+                Realizar una consulta
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PRODUCTOS
+        ================================================== -->
+
+        <section id="productos">
+
+            <h2>Nuestros productos</h2>
+
+            <p>
+
+                Conoce algunos de los productos que ofrecemos.
+
+            </p>
+
+
+            <div class="productos">
+
+
+                <div class="producto">
+
+                    <img
+                        src="Limpiador silver.jfif"
+                        alt="Limpiador Silver"
+                    >
+
+                    <h3>Liquid shine silver</h3>
+
+                    <p>
+
+                        Solución liquida para joyas de plata.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="producto">
+
+                    <img
+                        src="Cepillo limpiador.jfif"
+                        alt="Cepillo especial"
+                    >
+
+                    <h3>Cepillo limpiador</h3>
+
+                    <p>
+
+                        Cepillo con cerdas especiales para limpiar todas la partes de tus joyas.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="producto">
+
+                    <img
+                        src="Crema para brillo.jpg"
+                        alt="Crema para brillo"
+                    >
+
+                    <h3>Crema brillo instantáneo</h3>
+
+                    <p>
+
+                        Concentrado en crema que aporta un brillo instantáneo.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             LISTAS
+        ================================================== -->
+
+        <section>
+
+            <h2>¿Qu&eacute; ofrecemos?</h2>
+
+
+            <p>
+
+                Algunos de nuestros productos son:
+
+            </p>
+
+
+            <ul>
+
+                <li>Soluciones limpiadoras</li>
+
+                <li>Cremas especiales</li>
+
+                <li>Cepillos y brochas</li>
+
+                <li>Sprays protectores</li>
+
+            </ul>
+
+
+            <h3>Proceso de pedido</h3>
+
+
+            <ol>
+
+                <li>Seleccionar el producto.</li>
+
+              
+
+                <li>Realizar el pedido.</li>
+
+                <li>Confirmar el pago.</li>
+
+            </ol>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             VIDEO
+        ================================================== -->
+
+        <section id="proceso">
+
+            <h2>Nuestro proceso</h2>
+
+
+            <p>
+
+                Conoce parte del proceso de elaboraci&oacute;n
+                de nuestros productos.
+
+            </p>
+
+
+            <div class="video-contenedor">
+
+                <video
+                    class="video-principal"
+                    controls
+                >
+
+                    <source
+                        src="Elaboración de crema.mp4"
+                        type="video/mp4"
+                    >
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             TABLA
+        ================================================== -->
+
+        <section id="precios">
+
+            <h2>Productos y precios</h2>
+
+
+            <table>
+
+                <tr>
+
+                    <th>Producto</th>
+
+                    <th>Descripci&oacute;n</th>
+
+                    <th>Precio</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Liquid shine silver</td>
+
+                    <td>Limpiador para joyas de plata</td>
+
+                    <td>$400</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Cepillo limpiador</td>
+
+                    <td>Cepillo especial </td>
+
+                    <td>$100</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Crema brillo instantáneo</td>
+
+                    <td>Concentrado de crema</td>
+
+                    <td>$250</td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             HIPERVÍNCULO
+        ================================================== -->
+
+        <section>
+
+            <h2>M&aacute;s informaci&oacute;n</h2>
+
+
+            <p>
+
+                Puedes consultar informaci&oacute;n adicional
+                en el siguiente sitio:
+
+            </p>
+
+
+            <a
+                href="https://www.example.com"
+                target="_blank"
+                class="boton"
+            >
+
+                Visitar sitio
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FORMULARIO
+        ================================================== -->
+
+        <section id="contacto">
+
+            <h2>Cont&aacute;ctanos</h2>
+
+
+            <form>
+
+
+                <label>
+                    Nombre:
+                </label>
+
+
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Escribe tu nombre"
+                >
+
+
+
+                <label>
+                    Correo electr&oacute;nico:
+                </label>
+
+
+                <input
+                    type="email"
+                    name="correo"
+                    placeholder="ejemplo@correo.com"
+                >
+
+
+
+                <label>
+                    Producto de inter&eacute;s:
+                </label>
+
+
+                <select name="producto">
+
+                    <option>Crema brillo instantáneo</option>
+
+                    <option>Cepillo limpiador</option>
+
+                    <option>Liquid silver</option>
+                     
+                   
+
+
+
+                </select>
+
+
+
+                <label>
+                    Mensaje:
+                </label>
+
+
+                <textarea
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Escribe tu mensaje"
+                ></textarea>
+
+
+
+                <button type="submit">
+
+                    Enviar mensaje
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         PIE DE PÁGINA
+    ================================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 JEWELGLOW
+        </p>
+
+        <p>
+            Limpiadores especiales para tus joyas
+        </p>
+ <p> Sofia Bermúdez Rojas</p>
+<p> Paginas Web </p>
+
+    </footer>
+
+
+</body>
+
+</html>
